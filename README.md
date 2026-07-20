@@ -35,3 +35,9 @@ g++ -std=c++17 backend/main.cpp -o shadowbox
 ./shadowbox
 
 
+## 🚀 Live Demo
+
+**Open ShadowBox:**  
+https://potential-goldfish-r4w94p47vpggh575v-8080.app.github.dev/
+
+> Note: This demo is hosted using GitHub Codespaces. If the Codespace is stopped, the application will be temporarily unavailable.
