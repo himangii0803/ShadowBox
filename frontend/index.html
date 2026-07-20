@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        ShadowBox — Malware Behavior Analysis Sandbox
+    </title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="boot-screen">
+
+        <div class="boot-logo">
+            SHADOWBOX
+        </div>
+
+        <p>
+            Initializing Malware Behavior Analysis Sandbox...
+        </p>
+
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+
+    </div>
+
+    <div id="app">
+
+        <aside class="sidebar">
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+                    SB
+                </div>
+
+                <div>
+                    <h1>SHADOWBOX</h1>
+                    <span>FORENSIC LAB</span>
+                </div>
+
+            </div>
+
+            <nav>
+
+                <button class="nav-item active">
+                    Investigation Room
+                </button>
+
+                <button class="nav-item">
+                    Open Case
+                </button>
+
+                <button class="nav-item">
+                    Evidence Archive
+                </button>
+
+                <button class="nav-item">
+                    Behaviour Library
+                </button>
+
+                <button class="nav-item">
+                    System Intelligence
+                </button>
+
+            </nav>
+
+            <div class="system-status">
+
+                <span class="status-light"></span>
+
+                <div>
+                    <strong>Sandbox Online</strong>
+                    <p>Environment isolated</p>
+                </div>
+
+            </div>
+
+        </aside>
+
+        <main class="workspace">
+
+            <header class="topbar">
+
+                <div>
+
+                    <p class="eyebrow">
+                        ACTIVE INVESTIGATION
+                    </p>
+
+                    <h2>
+                        Digital Crime Investigation Room
+                    </h2>
+
+                </div>
+
+                <div class="topbar-actions">
+
+                    <button
+                        id="generate-report-button"
+                        disabled
+                    >
+                        Generate Report
+                    </button>
+
+                    <div class="case-id">
+
+                        CASE ID
+
+                        <strong id="case-id-value">
+                            #SB-2047
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <section class="case-control-panel">
+
+                <div class="case-control-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            CASE ACQUISITION
+                        </p>
+
+                        <h3>
+                            Select Behavioural Evidence
+                        </h3>
+
+                    </div>
+
+                    <span class="dataset-badge">
+                        43K+ SAMPLES
+                    </span>
+
+                </div>
+
+                <div class="case-search-row">
+
+                    <div class="hash-input-wrapper">
+
+                        <label for="hash-input">
+                            Malware sample hash
+                        </label>
+
+                        <input
+                            id="hash-input"
+                            type="text"
+                            placeholder="Paste a complete SHA256 hash"
+                            autocomplete="off"
+                        >
+
+                        <small id="hash-help">
+                            Leave empty to investigate a random dataset sample.
+                        </small>
+
+                    </div>
+
+                    <button id="search-case-button">
+                        Search Case
+                    </button>
+
+                    <button id="random-case-button">
+                        Random Case
+                    </button>
+
+                </div>
+
+                <div
+                    id="search-message"
+                    class="search-message"
+                >
+                    Dataset connection ready.
+                </div>
+
+            </section>
+
+            <section class="case-banner">
+
+                <div class="suspect-icon">
+                    ?
+                </div>
+
+                <div class="suspect-details">
+
+                    <p>
+                        PROCESS UNDER INVESTIGATION
+                    </p>
+
+                    <h3 id="process-name">
+                        Unknown Process
+                    </h3>
+
+                    <span id="process-hash">
+                        Awaiting behavioural evidence
+                    </span>
+
+                </div>
+
+                <button id="start-investigation">
+                    Start Investigation
+                </button>
+
+            </section>
+
+            <section class="investigation-grid">
+
+                <div class="panel evidence-board">
+
+                    <div class="panel-title">
+
+                        <span>
+                            Evidence Board
+                        </span>
+
+                        <small>
+                            Behavioural connections
+                        </small>
+
+                    </div>
+
+                    <div class="board">
+
+                        <div class="evidence-node central-node">
+                            SUSPECT<br>
+                            PROCESS
+                        </div>
+
+                        <div class="evidence-node node-one">
+                            FILE<br>
+                            ACTIVITY
+                        </div>
+
+                        <div class="evidence-node node-two">
+                            PROCESS<br>
+                            CREATION
+                        </div>
+
+                        <div class="evidence-node node-three">
+                            SYSTEM<br>
+                            ACCESS
+                        </div>
+
+                        <div class="evidence-node node-four">
+                            NETWORK<br>
+                            BEHAVIOUR
+                        </div>
+
+                        <div class="evidence-node node-five">
+                            API CALL<br>
+                            SEQUENCE
+                        </div>
+
+                        <svg class="connections">
+
+                            <line
+                                x1="50%"
+                                y1="50%"
+                                x2="18%"
+                                y2="22%"
+                            ></line>
+
+                            <line
+                                x1="50%"
+                                y1="50%"
+                                x2="81%"
+                                y2="19%"
+                            ></line>
+
+                            <line
+                                x1="50%"
+                                y1="50%"
+                                x2="17%"
+                                y2="77%"
+                            ></line>
+
+                            <line
+                                x1="50%"
+                                y1="50%"
+                                x2="82%"
+                                y2="76%"
+                            ></line>
+
+                            <line
+                                x1="50%"
+                                y1="50%"
+                                x2="50%"
+                                y2="12%"
+                            ></line>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+                <div class="panel verdict-panel">
+
+                    <div class="panel-title">
+
+                        <span>
+                            Preliminary Verdict
+                        </span>
+
+                        <small id="verdict-status">
+                            Waiting for evidence
+                        </small>
+
+                    </div>
+
+                    <div class="verdict-core">
+
+                        <div class="risk-ring">
+
+                            <span id="risk-score">
+                                00
+                            </span>
+
+                            <small>
+                                RISK
+                            </small>
+
+                        </div>
+
+                        <h3 id="verdict-text">
+                            UNCLASSIFIED
+                        </h3>
+
+                        <p id="verdict-description">
+                            No behavioural sequence has been analyzed.
+                        </p>
+
+                    </div>
+
+                    <div class="confidence">
+
+                        <span>
+                            Investigation confidence
+                        </span>
+
+                        <div class="confidence-bar">
+                            <div id="confidence-progress"></div>
+                        </div>
+
+                        <strong id="confidence-value">
+                            0%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section class="lower-grid">
+
+                <div class="panel timeline-panel">
+
+                    <div class="panel-title">
+
+                        <span>
+                            Behaviour Replay
+                        </span>
+
+                        <small>
+                            Chronological API-call evidence
+                        </small>
+
+                    </div>
+
+                    <div
+                        id="timeline"
+                        class="timeline"
+                    >
+
+                        <div class="empty-state">
+                            Start an investigation to reconstruct activity.
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="panel terminal-panel">
+
+                    <div class="terminal-header">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                        <p>
+                            shadowbox@forensic-lab
+                        </p>
+
+                    </div>
+
+                    <div
+                        id="terminal-output"
+                        class="terminal-output"
+                    >
+
+                        <p>
+                            &gt; Sandbox environment initialized.
+                        </p>
+
+                        <p>
+                            &gt; Dataset connection established.
+                        </p>
+
+                        <p>
+                            &gt; Awaiting investigation request...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <div
+        id="report-modal"
+        class="report-modal hidden"
+    >
+
+        <div class="report-modal-card">
+
+            <div class="report-modal-header">
+
+                <div>
+                    <p class="eyebrow">
+                        FORENSIC DOCUMENT
+                    </p>
+
+                    <h2>
+                        Investigation Report
+                    </h2>
+                </div>
+
+                <button id="close-report-button">
+                    ×
+                </button>
+
+            </div>
+
+            <div
+                id="report-content"
+                class="report-content"
+            >
+
+                <div class="report-brand">
+
+                    <div class="report-logo">
+                        SB
+                    </div>
+
+                    <div>
+                        <h1>SHADOWBOX</h1>
+                        <p>
+                            Malware Behavior Analysis Sandbox
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="report-classification">
+                    DIGITAL FORENSIC INVESTIGATION REPORT
+                </div>
+
+                <div class="report-meta-grid">
+
+                    <div>
+                        <span>Case ID</span>
+                        <strong id="report-case-id">
+                            —
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Generated</span>
+                        <strong id="report-date">
+                            —
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Process</span>
+                        <strong id="report-process">
+                            —
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Dataset Label</span>
+                        <strong id="report-label">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="report-section">
+
+                    <h3>
+                        Evidence Hash
+                    </h3>
+
+                    <p
+                        id="report-hash"
+                        class="report-hash"
+                    >
+                        —
+                    </p>
+
+                </div>
+
+                <div class="report-score-grid">
+
+                    <div class="report-score-box">
+                        <span>Risk Score</span>
+
+                        <strong id="report-risk-score">
+                            0/100
+                        </strong>
+                    </div>
+
+                    <div class="report-score-box">
+                        <span>Confidence</span>
+
+                        <strong id="report-confidence">
+                            0%
+                        </strong>
+                    </div>
+
+                    <div class="report-score-box">
+                        <span>Risk Level</span>
+
+                        <strong id="report-risk-level">
+                            —
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="report-section">
+
+                    <h3>
+                        Final Verdict
+                    </h3>
+
+                    <strong
+                        id="report-verdict"
+                        class="report-verdict"
+                    >
+                        —
+                    </strong>
+
+                    <p id="report-description">
+                        —
+                    </p>
+
+                </div>
+
+                <div class="report-section">
+
+                    <h3>
+                        Behavioural Timeline
+                    </h3>
+
+                    <div id="report-timeline">
+                        —
+                    </div>
+
+                </div>
+
+                <div class="report-footer">
+
+                    <p>
+                        Generated by ShadowBox C++ Forensic Engine
+                    </p>
+
+                    <p>
+                        For educational behavioural analysis only
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="report-actions">
+
+                <button id="print-report-button">
+                    Save as PDF
+                </button>
+
+                <button id="cancel-report-button">
+                    Close Report
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
