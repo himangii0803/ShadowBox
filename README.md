@@ -32,9 +32,9 @@ dataset/
 ##  Live Demo
 
 **Open ShadowBox:**  
-https://potential-goldfish-r4w94p47vpggh575v-8080.app.github.dev/
+https://shadowbox-m4xg.onrender.com/
 
-> Note: This demo is hosted using GitHub Codespaces. If the Codespace is stopped, the application will be temporarily unavailable.
+
 
 ## Run
 
